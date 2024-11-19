@@ -41,6 +41,8 @@ namespace Batiskaf
             DoubleBuffered = true;
             width = Width;
             height = Height;
+            BackgroundImage = Image.FromFile(@"батискаф.png");
+            Location = new Point(12, 300);
         }
 
         private void timer1_Tick(object sender, EventArgs e)
