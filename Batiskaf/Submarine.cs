@@ -11,20 +11,51 @@ using System.Windows.Forms;
 
 namespace Batiskaf
 {
+
+    /// <summary>
+    /// Подводная лодка
+    /// </summary>
     public partial class Submarine : UserControl, INotifyPropertyChanged
     {
-        private Image backgroundImage;
+        /// <summary>
+        /// Пульт привязанный к лодке
+        /// </summary>
         private Pult pult;
+
+        /// <summary>
+        /// Изменение координат по оси X
+        /// </summary>
         public int SubUp { get; set; } = 0;
+        /// <summary>
+        /// Изменение координат по оси Y
+        /// </summary>
         public int SubLeft { get; set; } = 0;
         
-
+        /// <summary>
+        /// Ускорение
+        /// </summary>
         public int Acceleration {  get; set; } = 5;
+        /// <summary>
+        /// Скорость
+        /// </summary>
         double speed = 0;
+        /// <summary>
+        /// Глубина
+        /// </summary>
         double glubina = 0;
+
+        /// <summary>
+        /// Свойство для скорости
+        /// </summary>
         public double Speed { get { return speed; } set {speed = value; OnPropertyChanged(); } }
+        /// <summary>
+        /// Свойство для глубины
+        /// </summary>
         public double Glubina { get { return glubina; } set { glubina = value; OnPropertyChanged(); } }
 
+        /// <summary>
+        /// Замедление
+        /// </summary>
         const int slowDown = 4;
 
         public event PropertyChangedEventHandler? PropertyChanged;
@@ -33,7 +64,17 @@ namespace Batiskaf
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(prop));
         }
 
+        /// <summary>
+        /// Ширина и высота формы
+        /// </summary>
         int width, height;
+
+        /// <summary>
+        /// Конструктор лодки
+        /// </summary>
+        /// <param name="pult">Пульт, используемый на форме</param>
+        /// <param name="Width">Ширина формы</param>
+        /// <param name="Height">Высота формы</param>
         public Submarine(Pult pult, int Width, int Height)
         {
             InitializeComponent();
@@ -41,10 +82,16 @@ namespace Batiskaf
             DoubleBuffered = true;
             width = Width;
             height = Height;
-            BackgroundImage = Image.FromFile(@"батискаф.png");
+            BackgroundImage = Image.FromFile("батискаф.png");
             Location = new Point(12, 300);
         }
 
+
+        /// <summary>
+        /// Срабатывание таймера
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void timer1_Tick(object sender, EventArgs e)
         {
             if (pult.Active)
@@ -89,6 +136,12 @@ namespace Batiskaf
             }
         }
 
+
+        /// <summary>
+        /// Нажатие на подводную лодку
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Submarine_Click(object sender, EventArgs e)
         {
             if (pult.OzidanieSvazi)
