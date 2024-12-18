@@ -32,7 +32,6 @@
             button1 = new Button();
             button3 = new Button();
             button4 = new Button();
-            button5 = new Button();
             label1 = new Label();
             label2 = new Label();
             textBox1 = new TextBox();
@@ -78,16 +77,6 @@
             button4.Text = "<";
             button4.UseVisualStyleBackColor = true;
             button4.Click += button4_Click;
-            // 
-            // button5
-            // 
-            button5.Location = new Point(3, 3);
-            button5.Name = "button5";
-            button5.Size = new Size(91, 45);
-            button5.TabIndex = 5;
-            button5.Text = "связать";
-            button5.UseVisualStyleBackColor = true;
-            button5.Click += button5_Click;
             // 
             // label1
             // 
@@ -136,7 +125,6 @@
             Controls.Add(textBox1);
             Controls.Add(label2);
             Controls.Add(label1);
-            Controls.Add(button5);
             Controls.Add(button4);
             Controls.Add(button3);
             Controls.Add(button1);
@@ -153,7 +141,6 @@
         private Button button1;
         private Button button3;
         private Button button4;
-        private Button button5;
         private Label label1;
         private Label label2;
         private TextBox textBox1;

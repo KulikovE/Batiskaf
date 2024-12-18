@@ -56,7 +56,7 @@ namespace Batiskaf
         /// <summary>
         /// Замедление
         /// </summary>
-        const int slowDown = 4;
+        const int slowDown = 2;
 
         public event PropertyChangedEventHandler? PropertyChanged;
         public void OnPropertyChanged([CallerMemberName] string prop = "")
@@ -144,9 +144,7 @@ namespace Batiskaf
         /// <param name="e"></param>
         private void Submarine_Click(object sender, EventArgs e)
         {
-            if (pult.OzidanieSvazi)
-            {
-                pult.OzidanieSvazi = false;
+                pult.ClearBind();
                 if (pult.CurrentSubmarine != null)
                 {
                     pult.CurrentSubmarine.BackgroundImage = Image.FromFile("батискаф.png");
@@ -155,7 +153,6 @@ namespace Batiskaf
                 BackgroundImage = Image.FromFile("батискаф1.png");
                 pult.Active = true;
                 pult.Bind();
-            }
         }
     }
 }

@@ -49,7 +49,6 @@
             pult1.CurrentSubmarine = null;
             pult1.Location = new Point(100, 0);
             pult1.Name = "pult1";
-            pult1.OzidanieSvazi = false;
             pult1.Size = new Size(336, 284);
             pult1.TabIndex = 0;
             // 
@@ -58,12 +57,13 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ActiveCaption;
-            ClientSize = new Size(1298, 644);
+            ClientSize = new Size(1602, 644);
             Controls.Add(button1);
             Controls.Add(pult1);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             MaximizeBox = false;
             Name = "Form1";
+            StartPosition = FormStartPosition.Manual;
             Text = "Form1";
             Paint += Form1_Paint;
             ResumeLayout(false);
