@@ -35,8 +35,9 @@
             // button1
             // 
             button1.Location = new Point(0, 0);
+            button1.Margin = new Padding(3, 2, 3, 2);
             button1.Name = "button1";
-            button1.Size = new Size(94, 29);
+            button1.Size = new Size(82, 22);
             button1.TabIndex = 1;
             button1.Text = "добавить";
             button1.UseVisualStyleBackColor = true;
@@ -47,24 +48,27 @@
             pult1.Active = false;
             pult1.BackColor = Color.Transparent;
             pult1.CurrentSubmarine = null;
-            pult1.Location = new Point(100, 0);
+            pult1.Location = new Point(88, 0);
+            pult1.Margin = new Padding(3, 2, 3, 2);
             pult1.Name = "pult1";
-            pult1.Size = new Size(336, 284);
+            pult1.Size = new Size(294, 213);
             pult1.TabIndex = 0;
             // 
             // Form1
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ActiveCaption;
-            ClientSize = new Size(1602, 644);
+            ClientSize = new Size(1402, 483);
             Controls.Add(button1);
             Controls.Add(pult1);
             FormBorderStyle = FormBorderStyle.FixedSingle;
+            Margin = new Padding(3, 2, 3, 2);
             MaximizeBox = false;
             Name = "Form1";
             StartPosition = FormStartPosition.Manual;
             Text = "Form1";
+            FormClosing += Form1_FormClosing;
             Paint += Form1_Paint;
             ResumeLayout(false);
         }

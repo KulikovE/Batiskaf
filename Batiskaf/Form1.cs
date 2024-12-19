@@ -13,13 +13,14 @@ namespace Batiskaf
         {
             InitializeComponent();
             Refresh();
-            Height = Decimal.ToInt32(glubina+320+100+214);//глубина самого моря, небо, дно, смешение координат батискафа
+            Height = Decimal.ToInt32(glubina + 320 + 100 + 214);//глубина самого моря, небо, дно, смешение координат батискафа
         }
+
 
         /// <summary>
         /// Лист всех подводных лодок
         /// </summary>
-        private List<Submarine> submarines = new List<Submarine>();
+        public static List<Submarine> submarines = new List<Submarine>();
 
         /// <summary>
         /// Кнопка "Добавить"
@@ -33,7 +34,6 @@ namespace Batiskaf
             submarines.Add(submarine);
         }
 
-
         /// <summary>
         /// Отрисовка неба и дна
         /// </summary>
@@ -42,7 +42,12 @@ namespace Batiskaf
         private void Form1_Paint(object sender, PaintEventArgs e)
         {
             e.Graphics.FillRectangle(Brushes.Azure, new Rectangle(0, 0, Width, 320));
-            e.Graphics.FillRectangle(Brushes.Moccasin, new Rectangle(0, Height-100, Width, 100));
+            e.Graphics.FillRectangle(Brushes.Moccasin, new Rectangle(0, Height - 100, Width, 100));
+        }
+
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            pult1.Running = false;
         }
     }
 }

@@ -144,15 +144,20 @@ namespace Batiskaf
         /// <param name="e"></param>
         private void Submarine_Click(object sender, EventArgs e)
         {
-                pult.ClearBind();
-                if (pult.CurrentSubmarine != null)
-                {
-                    pult.CurrentSubmarine.BackgroundImage = Image.FromFile("батискаф.png");
-                }
-                pult.CurrentSubmarine = this;
-                BackgroundImage = Image.FromFile("батискаф1.png");
-                pult.Active = true;
-                pult.Bind();
+            ViborBatiskaf();
+        }
+
+        public void ViborBatiskaf()
+        {
+            pult.ClearBind();
+            if (pult.CurrentSubmarine != null)
+            {
+                pult.CurrentSubmarine.BackgroundImage = Image.FromFile("батискаф.png");
+            }
+            pult.CurrentSubmarine = this;
+            BackgroundImage = Image.FromFile("батискаф1.png");
+            pult.Active = true;
+            pult.Bind();
         }
     }
 }

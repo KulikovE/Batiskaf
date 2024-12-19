@@ -40,9 +40,10 @@
             // 
             // button2
             // 
-            button2.Location = new Point(235, 98);
+            button2.Location = new Point(206, 74);
+            button2.Margin = new Padding(3, 2, 3, 2);
             button2.Name = "button2";
-            button2.Size = new Size(99, 92);
+            button2.Size = new Size(87, 69);
             button2.TabIndex = 1;
             button2.Text = ">";
             button2.UseVisualStyleBackColor = true;
@@ -50,9 +51,10 @@
             // 
             // button1
             // 
-            button1.Location = new Point(130, 3);
+            button1.Location = new Point(114, 2);
+            button1.Margin = new Padding(3, 2, 3, 2);
             button1.Name = "button1";
-            button1.Size = new Size(99, 92);
+            button1.Size = new Size(87, 69);
             button1.TabIndex = 2;
             button1.Text = "^";
             button1.UseVisualStyleBackColor = true;
@@ -60,9 +62,10 @@
             // 
             // button3
             // 
-            button3.Location = new Point(130, 196);
+            button3.Location = new Point(114, 147);
+            button3.Margin = new Padding(3, 2, 3, 2);
             button3.Name = "button3";
-            button3.Size = new Size(99, 92);
+            button3.Size = new Size(87, 69);
             button3.TabIndex = 3;
             button3.Text = "v";
             button3.UseVisualStyleBackColor = true;
@@ -70,9 +73,10 @@
             // 
             // button4
             // 
-            button4.Location = new Point(28, 98);
+            button4.Location = new Point(24, 74);
+            button4.Margin = new Padding(3, 2, 3, 2);
             button4.Name = "button4";
-            button4.Size = new Size(99, 92);
+            button4.Size = new Size(87, 69);
             button4.TabIndex = 4;
             button4.Text = "<";
             button4.UseVisualStyleBackColor = true;
@@ -81,44 +85,46 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(248, 206);
+            label1.Location = new Point(217, 154);
             label1.Name = "label1";
-            label1.Size = new Size(76, 20);
+            label1.Size = new Size(62, 15);
             label1.TabIndex = 6;
             label1.Text = "Скорость:";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(28, 206);
+            label2.Location = new Point(24, 154);
             label2.Name = "label2";
-            label2.Size = new Size(69, 20);
+            label2.Size = new Size(56, 15);
             label2.TabIndex = 7;
             label2.Text = "Глубина:";
             // 
             // textBox1
             // 
-            textBox1.Location = new Point(46, 238);
+            textBox1.Location = new Point(40, 178);
+            textBox1.Margin = new Padding(3, 2, 3, 2);
             textBox1.Name = "textBox1";
             textBox1.ReadOnly = true;
-            textBox1.Size = new Size(51, 27);
+            textBox1.Size = new Size(45, 23);
             textBox1.TabIndex = 8;
             textBox1.Text = "0";
             textBox1.TextAlign = HorizontalAlignment.Center;
             // 
             // textBox2
             // 
-            textBox2.Location = new Point(262, 238);
+            textBox2.Location = new Point(229, 178);
+            textBox2.Margin = new Padding(3, 2, 3, 2);
             textBox2.Name = "textBox2";
             textBox2.ReadOnly = true;
-            textBox2.Size = new Size(50, 27);
+            textBox2.Size = new Size(44, 23);
             textBox2.TabIndex = 9;
             textBox2.Text = "0";
             textBox2.TextAlign = HorizontalAlignment.Center;
             // 
             // Pult
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Transparent;
             Controls.Add(textBox2);
@@ -129,8 +135,10 @@
             Controls.Add(button3);
             Controls.Add(button1);
             Controls.Add(button2);
+            Margin = new Padding(3, 2, 3, 2);
             Name = "Pult";
-            Size = new Size(357, 300);
+            Size = new Size(312, 225);
+            Load += Pult_Load;
             ResumeLayout(false);
             PerformLayout();
         }
