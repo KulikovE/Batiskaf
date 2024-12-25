@@ -173,10 +173,28 @@ namespace Batiskaf
                         case "2": Right(); break;
                         case "3": Down(); break;
                         case "4": Left(); break;
-                        case "5": if (Form1.submarines.Count > 1)
-                            { Random random = new Random();
-                                int numberSub = random.Next(0, Form1.submarines.Count);
-                                Invoke(() => Form1.submarines[numberSub].ViborBatiskaf()); } break;
+                        case "5":
+                            {
+                                for (int i = 0; i < Form1.submarines.Count; i++)
+                                {
+                                    if (currentSubmarine == Form1.submarines[i])
+                                    {
+                                        if (i + 1 < Form1.submarines.Count)
+                                        {
+                                            Invoke(() => Form1.submarines[i + 1].ViborBatiskaf());
+                                        }
+                                        else
+                                        {
+                                            Invoke(() => Form1.submarines[0].ViborBatiskaf());
+                                        }
+                                        break;
+                                    }
+                                }
+                                if(currentSubmarine == null)
+                                {
+                                    Invoke(() => Form1.submarines[0].ViborBatiskaf());
+                                }
+                            } break;
                     }
                 }
             }
