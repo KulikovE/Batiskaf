@@ -145,8 +145,8 @@ namespace Batiskaf
             udpServer = new UdpClient();
             udpServer.Client.SetSocketOption(SocketOptionLevel.Socket, SocketOptionName.ReuseAddress, true);
             // Определяем конечную точку для прослушивания (любой IP-адрес и порт 11000)
-            udpServer.Client.Bind(new IPEndPoint(IPAddress.Any, 1105));
-            remoteEndPoint = new IPEndPoint(IPAddress.Any, 1105);
+            udpServer.Client.Bind(new IPEndPoint(IPAddress.Any, 11005));
+            remoteEndPoint = new IPEndPoint(IPAddress.Any, 11005);
 
             Thread thread = new Thread(UDPServ);
             thread.Start();
@@ -167,39 +167,17 @@ namespace Batiskaf
                     string receivedMessage = Encoding.ASCII.GetString(receivedBytes);
 
                     // Выводим полученное сообщение в консоль
-                    if (receivedMessage == "1")
+                    switch (receivedMessage)
                     {
-                        Up();
+                        case "1": Up(); break;
+                        case "2": Right(); break;
+                        case "3": Down(); break;
+                        case "4": Left(); break;
+                        case "5": if (Form1.submarines.Count > 1)
+                            { Random random = new Random();
+                                int numberSub = random.Next(0, Form1.submarines.Count);
+                                Invoke(() => Form1.submarines[numberSub].ViborBatiskaf()); } break;
                     }
-                    if (receivedMessage == "2")
-                    {
-                        Right();
-                    }
-                    if (receivedMessage == "3")
-                    {
-                        Down();
-                    }
-                    if (receivedMessage == "4")
-                    {
-                        Left();
-                    }
-                    if (receivedMessage == "5") { 
-                        if (Form1.submarines.Count > 1)
-                        {
-                            Random random = new Random();
-                            int numberSub = random.Next(0, Form1.submarines.Count);
-                            Invoke(() => Form1.submarines[numberSub].ViborBatiskaf());
-                        }
-                    }
-                    //if (receivedMessage == "6")
-                    //{
-                    //    Invoke(() =>
-                    //    {
-                    //        Submarine submarine = new Submarine(this, Width, Height - 100);
-                    //        Controls.Add(submarine);
-                    //        Form1.submarines.Add(submarine);
-                    //    });
-                    //}
                 }
             }
             catch(SocketException) { }
